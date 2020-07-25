@@ -7,7 +7,7 @@ router.get('/list', async (req, res) => {
         const list = await api.getAllItems(); 
         return res.status(200).json({ list });
     } catch {
-        return res.status(400).json({ error: "List empty." })
+        return res.status(400).json({ error: "List empty.", list: [] })
     }
 })
 
