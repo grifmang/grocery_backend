@@ -27,7 +27,7 @@ router.get('/clear', (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.post('/check/:id', (req, res) => {
+router.post('/check/:id', async (req, res) => {
     const check = await api.checkItem(req.params.id);
     if (check) {
         return res.status(200).json({ message: "Item Checked." })
