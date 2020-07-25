@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const api = require('apiModel.js');
-const apiModel = require('./apiModel');
+// const apiModel = require('./apiModel.js');
 
 router.get('/list', async (req, res) => {
     try {
