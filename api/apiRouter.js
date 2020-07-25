@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const api = require('./apiModel.js');
-// const apiModel = require('./apiModel.js');
+const e = require('express');
 
 router.get('/list', async (req, res) => {
     try {
@@ -25,6 +25,15 @@ router.get('/clear', (req, res) => {
         return res.status(200).json({ message: "List cleared." })
     })
     .catch(err => console.log(err))
+})
+
+router.post('/check/:id', (req, res) => {
+    const check = await api.checkItem(req.params.id);
+    if (check) {
+        return res.status(200).json({ message: "Item Checked." })
+    } else {
+        return res.status(400).json({ error: "Something went wrong." })
+    }
 })
 
 module.exports = router;
