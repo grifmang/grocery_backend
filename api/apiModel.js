@@ -34,7 +34,7 @@ async function checkItem(id) {
 
 async function clearList() {
     const items = await getAllItems();
-    items.map(element => {
+    items.map(async element => {
         await checkDisplayItem(element.id)
     })
 }
