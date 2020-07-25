@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex.schema('list', table => {
+  return knex.schema.createTable('list', table => {
       table.increments();
       table.string('item', 255);
       table.boolean('checked').defaultTo(false);
@@ -10,5 +10,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  
+    return knex.schema
+    .dropTableIfExists('list')
 };
