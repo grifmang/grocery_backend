@@ -26,3 +26,5 @@ router.get('/clear', (req, res) => {
     })
     .catch(err => console.log(err))
 })
+
+module.exports = router;
