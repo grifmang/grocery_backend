@@ -4,7 +4,7 @@ exports.up = function(knex) {
       table.increments();
       table.string('item', 255);
       table.boolean('checked').defaultTo(false);
-      table.biginteger('id').defaultTo(Date.now());
+    //   table.biginteger('id').defaultTo(Date.now());
       table.boolean('display').defaultTo(true);
   })
 };
